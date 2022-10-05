@@ -1,0 +1,29 @@
+
+To shortcut> Properties> luncher> at Command box, Type: 
+java -javaagent:BurpSuiteLoader_v2022.8.jar -noverify -jar burpsuite_pro_v2022.8.jar
+
+
+Working folder:
+
+/home/nerd/Documents/burpsuite
+
+Make sure Working Folder contain following files:
+
+BurpSuiteLoader_v2022.8.jar
+burpsuite_pro_v2022.8.jar
+
+
+
+
+//Default Installation script /community version modified 
+
+#!/usr/bin/env sh
+
+set -e
+
+export JAVA_CMD=java
+
+# Include the wrappers utility script
+. /usr/lib/java-wrappers/java-wrappers.sh
+
+run_java  -jar -javaagent:/home/nerd/Documents/burpsuite/BurpSuiteLoader_v2022.8.jar  -noverify /home/nerd/Documents/burpsuite/burpsuite_pro_v2022.8.jar "$@"
